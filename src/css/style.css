@@ -27,20 +27,21 @@ html {
     scroll-behavior: smooth;
 }
 
-.logo .imagem {
-    width: 100px;
-}
-
 .logo {
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    color: #000;
+}
+
+.logo .imagem {
+    width: 100px;
 }
 
 .logo .titulo {
+    transform: 0.3s ease-in-out;
     margin-left: 7px;
     font-size: 17px;
-    transform: 0.3s ease-in-out;
     font-weight: 800;
 }
 
@@ -53,10 +54,10 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 25px 0;
-    margin: 0 auto;
-    flex-wrap: wrap;
     max-width: 1170px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
 }
 
 @media(max-width: 624px) {
@@ -73,29 +74,29 @@ html {
     }
 }
 
-.cabecalho .navegacao .menu {
+.navegacao .menu {
     display: flex;
 }
 
-.cabecalho .navegacao .menu {
+.navegacao .menu .item{
     margin: 10px;
 }
 
-.cabecalho .navegacao .menu a {
+.navegacao .menu .item a {
     padding: 15px;
 }
 
-.cabecalho .navegacao .menu a:hover {
+.navegacao .menu .item a:hover {
     background-color: #1ed760;
     color: white;
 }
 
 .conteudo-principal .paineis {
+    position: relative;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 700px;
-    position: relative;
 }
 
 @media(max-width:900px) {
@@ -113,20 +114,20 @@ html {
     position: absolute;
     z-index: -1;
     filter: brightness(70%);
-
     opacity: 0;
-    transition: 0.3 ease-in-out;
+    transition: 0.5 ease-in-out;
+    font-size: 20px;
 }
 
-.conteudo-principal .paineis .projeto1 {
+.conteudo-principal .paineis .imagem-painel.projeto1 {
     background-image: url(../imagens/painel1.jpg);
 }
 
-.conteudo-principal .paineis .projeto2 {
+.conteudo-principal .paineis .imagem-painel.projeto2 {
     background-image: url(../imagens/painel2.jpg);
 }
 
-.conteudo-principal .paineis .projeto3 {
+.conteudo-principal .paineis .imagem-painel.projeto3 {
     background-image: url(../imagens/painel3.jpg);
 }
 
@@ -141,15 +142,18 @@ html {
 }
 
 .conteudo-principal .paineis .seta {
-    background: url('../imagens/seta.png');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('../imagens/seta.png') no-repeat center;
     background-size: contain;
     width: 50px;
     height: 50px;
     position: absolute;
     text-indent: 100%;
     overflow: hidden;
+}
+
+.conteudo-principal .paineis .seta.desabilitar{
+    opacity: 0.5;
+    cursor: auto;
 }
 
 .conteudo-principal .paineis .seta.btn-voltar {
@@ -172,17 +176,17 @@ html {
 }
 
 .quem-somos .conteudo .informacoes {
-    width: 48%;
+    width: 40%;
 }
 
-.quem-somos .conteudo .imagem {
+.quem-somos .imagem {
     width: 60%;
 }
 
 .quem-somos .conteudo .informacoes .titulo {
     font-size: 50px;
-    color: #1ed760;
     margin-bottom: 20px;
+    color: #1ed760;
 }
 
 .quem-somos .conteudo .informacoes .texto {
@@ -196,15 +200,14 @@ html {
     .quem-somos .conteudo {
     flex-direction: column;
     text-align: center;
-    padding: 100px 10px;
+    padding: 100px 30px;
     }
-
-    .quem-somos .conteudo .imagem {
-    display: none;
-    }
-
     .quem-somos .conteudo .informacoes {
-    width: 100%;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .quem-somos .imagem {
+    display: none;
     }
 }
 
@@ -216,25 +219,25 @@ html {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .rodape .redes-sociais {
     display: flex;
 }
 
-.rodape .redes-sociais a {
+.rodape .redes-sociais a{
     display: flex;
     justify-content: center;
     margin: 0 10px;
-    font-size: 30px;
-    border: 1px solid #111;
-    border-radius: 50%;
+    border: 2px solid #111;
     padding: 15px;
     width: 65px;
+    border-radius: 50%;
     transition: 0.3s ease-in-out;
+    font-size: 30px;
 }
 
 .rodape .redes-sociais a:hover {
@@ -262,5 +265,15 @@ html {
     .rodape .navegacao .logo, .rodape .navegacao .redes-sociais {
         width: 100%;
         justify-content: center;
+    }
+
+    .rodape .navegacao .menu{
+        margin: 50px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape .navegacao .menu .item{
+        margin: 20px ;
     }
 }
